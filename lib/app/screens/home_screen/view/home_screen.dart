@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
           );
         } else {
           log("its getting not as we expected");
-          return AuthScreen();
+          return const AuthScreen();
         }
       },
     );

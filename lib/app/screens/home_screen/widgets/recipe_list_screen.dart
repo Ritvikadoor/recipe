@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:reciepe_app/app/screens/home_screen/view/dishes_screen.dart';
 
 final list = ['hey', 'bey', 'yoo'];
 
@@ -56,30 +57,28 @@ class _RecipeListScreenState extends State<RecipeListScreen>
         ),
       ),
       body: TabBarView(
-        children: <Widget>[
-          FirstTab(),
-        ],
-// if you want yo disable swiping in tab the use below code
-//            physics: NeverScrollableScrollPhysics(),
         controller: tabController,
+        children: <Widget>[
+          RecipeDishes(),
+        ],
       ),
     );
   }
 }
 
-class FirstTab extends StatefulWidget {
+class RecipeDishes extends StatefulWidget {
   @override
-  FirstTabState createState() => FirstTabState();
+  RecipeDishesState createState() => RecipeDishesState();
 }
 
-class FirstTabState extends State<FirstTab>
+class RecipeDishesState extends State<RecipeDishes>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    tabController = new TabController(length: 3, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -123,7 +122,7 @@ class FirstTabState extends State<FirstTab>
         ),
         body: const TabBarView(
           children: [
-            Text("TAB ONE CONTENT"),
+            DishesScreen(),
             Text("TAB TWO CONTENT"),
             Text("TAB THREE CONTENT"),
             Text("TAB FOUR CONTENT"),

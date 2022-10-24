@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 final list = ['hey', 'bey', 'yoo'];
 
-class RecipeListPage extends StatefulWidget {
-  const RecipeListPage({super.key});
+class RecipeListScreen extends StatefulWidget {
+  const RecipeListScreen({super.key});
 
   @override
-  State<RecipeListPage> createState() => _RecipeListPageState();
+  State<RecipeListScreen> createState() => _RecipeListScreenState();
 }
 
-class _RecipeListPageState extends State<RecipeListPage>
+class _RecipeListScreenState extends State<RecipeListScreen>
     with SingleTickerProviderStateMixin {
   String title = "Home";
 
@@ -54,6 +54,14 @@ class _RecipeListPageState extends State<RecipeListPage>
                 )),
           ],
         ),
+      ),
+      body: TabBarView(
+        children: <Widget>[
+          FirstTab(),
+        ],
+// if you want yo disable swiping in tab the use below code
+//            physics: NeverScrollableScrollPhysics(),
+        controller: tabController,
       ),
     );
   }

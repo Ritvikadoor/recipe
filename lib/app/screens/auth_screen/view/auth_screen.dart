@@ -39,14 +39,14 @@ class AuthScreen extends StatelessWidget {
                     provider.googleLogin();
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ButtonSignin(
                   text: "Phone",
                   color: Colors.green,
                   icon: IconButton(
-                    icon: FaIcon(FontAwesomeIcons.phone),
+                    icon: const FaIcon(FontAwesomeIcons.phone),
                     onPressed: () {},
                   ),
                   onPressed: () {},

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:reciepe_app/app/screens/auth_screen/view/auth_screen.dart';
 import 'package:reciepe_app/app/screens/auth_screen/view_model/auth_services.dart';
 import 'package:reciepe_app/app/screens/home_screen/view/home_screen.dart';
 

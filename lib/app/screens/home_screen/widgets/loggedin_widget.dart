@@ -1,10 +1,31 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:reciepe_app/app/screens/auth_screen/view_model/auth_services.dart';
 
-class LoggedInWidget extends StatelessWidget {
-  const LoggedInWidget({super.key});
+final list = ['hey', 'bey', 'yoo'];
+
+class RecipeListPage extends StatefulWidget {
+  const RecipeListPage({super.key});
+
+  @override
+  State<RecipeListPage> createState() => _RecipeListPageState();
+}
+
+class _RecipeListPageState extends State<RecipeListPage>
+    with SingleTickerProviderStateMixin {
+  String title = "Home";
+
+  late TabController tabController;
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,41 +33,94 @@ class LoggedInWidget extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("Logged In"),
-        centerTitle: true,
-        actions: [
-          TextButton(
-              onPressed: () {
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.logOut();
-              },
-              child: Text("Log Out"))
-        ],
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(70),
+        child: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+                size: 25,
+              )),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.shopping_cart_outlined,
+                  color: Colors.black,
+                )),
+          ],
+        ),
       ),
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
-              Text(
-                "Profile",
-                style: TextStyle(fontSize: 24),
-              ),
-              CircleAvatar(
-                backgroundImage: NetworkImage(user.photoURL!),
-              ),
-              Text(
-                user.displayName.toString(),
-                style: TextStyle(fontSize: 24),
-              ),
-              Text(
-                user.email.toString(),
-                style: TextStyle(fontSize: 24),
-              ),
-            ],
+    );
+  }
+}
+
+class FirstTab extends StatefulWidget {
+  @override
+  FirstTabState createState() => FirstTabState();
+}
+
+class FirstTabState extends State<FirstTab>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = new TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: Container(
+            height: 50.0,
+            child: const TabBar(
+              indicatorColor: Colors.red,
+              unselectedLabelColor: Colors.grey,
+              labelColor: Colors.red,
+              tabs: [
+                Tab(
+                  text: "ONE",
+                ),
+                Tab(
+                  text: "TWO",
+                ),
+                Tab(
+                  text: "THREE",
+                ),
+                Tab(
+                  text: "FOUR",
+                ),
+                Tab(
+                  text: "FIVE",
+                ),
+              ],
+            ),
           ),
+        ),
+        body: const TabBarView(
+          children: [
+            Text("TAB ONE CONTENT"),
+            Text("TAB TWO CONTENT"),
+            Text("TAB THREE CONTENT"),
+            Text("TAB FOUR CONTENT"),
+            Text("TAB FIVE CONTENT"),
+          ],
         ),
       ),
     );

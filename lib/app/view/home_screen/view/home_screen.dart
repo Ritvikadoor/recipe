@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:reciepe_app/app/screens/auth_screen/view/auth_screen.dart';
-import 'package:reciepe_app/app/screens/home_screen/widgets/tabbar.dart';
+import 'package:reciepe_app/app/view/auth_screen/view/auth_screen.dart';
+import 'package:reciepe_app/app/view/home_screen/widgets/tabbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

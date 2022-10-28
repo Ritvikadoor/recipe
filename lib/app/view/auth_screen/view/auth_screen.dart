@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:reciepe_app/app/screens/auth_screen/view_model/auth_services.dart';
-import 'package:reciepe_app/app/screens/auth_screen/widgets/button_signin.dart';
+import 'package:reciepe_app/app/view/auth_screen/view_model/auth_services.dart';
+import 'package:reciepe_app/app/view/auth_screen/widgets/button_signin.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:reciepe_app/app/screens/home_screen/view/dishes_screen.dart';
+import 'package:reciepe_app/app/view/home_screen/view/dishes_screen.dart';
 
 class RecipeDishesTab extends StatefulWidget {
   @override

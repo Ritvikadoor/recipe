@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciepe_app/app/screens/home_screen/widgets/card_dishes.dart';
+import 'package:reciepe_app/app/view/home_screen/widgets/card_dishes.dart';
 
 class DishesScreen extends StatelessWidget {
   const DishesScreen({super.key});

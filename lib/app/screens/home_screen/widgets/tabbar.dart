@@ -2,23 +2,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:reciepe_app/app/screens/home_screen/view/dishes_screen.dart';
 
-class RecipeDishes extends StatefulWidget {
+class RecipeDishesTab extends StatefulWidget {
   @override
-  RecipeDishesState createState() => RecipeDishesState();
+  RecipeDishesTabState createState() => RecipeDishesTabState();
 }
 
-class RecipeDishesState extends State<RecipeDishes>
+class RecipeDishesTabState extends State<RecipeDishesTab>
     with SingleTickerProviderStateMixin {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

@@ -34,35 +34,38 @@ class RecipeCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Stack(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("SAR 58.39"),
-                      Container(
-                        child: Row(
-                          children: [
-                            Text("15 Calories"),
-                            SizedBox(
-                              height: 80,
-                              child: Image.network(
-                                "https://www.whatsappimages.in/wp-content/uploads/2021/07/Top-HD-sad-quotes-for-whatsapp-status-in-hindi-Pics-Images-Download-Free.gif",
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 60),
-                    height: 120,
-                    width: 200,
-                    child: Text(
-                        "The canonical fines herbes of French haute cuisine comprise finely chopped parsley, chives, tarragon, and chervil. These are employed in seasoning delicate dishes, such as chicken, fish, an"),
-                  )
-                ],
+              Expanded(
+                child: Stack(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("SAR 58.39"),
+                        Container(
+                          child: Row(
+                            children: [
+                              Text("15 Calories"),
+                              SizedBox(
+                                height: 80,
+                                width: 80,
+                                child: Image.network(
+                                  "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 60),
+                      height: 120,
+                      width: 200,
+                      child: Text(
+                          "The canonical fines herbes of French haute cuisine comprise finely chopped parsley, chives, tarragon, and chervil. These are employed in seasoning delicate dishes, such as chicken, fish, an"),
+                    )
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),

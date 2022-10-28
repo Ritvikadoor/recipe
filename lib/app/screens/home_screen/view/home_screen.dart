@@ -19,13 +19,12 @@ class HomeScreen extends StatelessWidget {
           );
         } else if (snapshot.hasData) {
           log("Snapshot has data");
-          return const RecipeListScreen();
+          return RecipeDishes();
         } else if (snapshot.hasError) {
           return const Center(
             child: Text('Something Went wrong'),
           );
         } else {
-          log("its getting not as we expected");
           return const AuthScreen();
         }
       },

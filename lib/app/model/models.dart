@@ -1,17 +1,17 @@
 // To parse required this JSON data, do
 //
-//     final apiModel = apiModelFromJson(jsonString);
+//     final DishesModel = apiModelFromJson(jsonString);
 
 import 'dart:convert';
 
-List<ApiModel> apiModelFromJson(String str) =>
-    List<ApiModel>.from(json.decode(str).map((x) => ApiModel.fromJson(x)));
+List<DishesModel> dishesModelFromJson(String str) => List<DishesModel>.from(
+    json.decode(str).map((x) => DishesModel.fromJson(x)));
 
-String apiModelToJson(List<ApiModel> data) =>
+String dishesModelToJson(List<DishesModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class ApiModel {
-  ApiModel({
+class DishesModel {
+  DishesModel({
     required this.restaurantId,
     required this.restaurantName,
     required this.restaurantImage,
@@ -31,7 +31,7 @@ class ApiModel {
   String nexturl;
   List<TableMenuList> tableMenuList;
 
-  factory ApiModel.fromJson(Map<String, dynamic> json) => ApiModel(
+  factory DishesModel.fromJson(Map<String, dynamic> json) => DishesModel(
         restaurantId: json["restaurant_id"],
         restaurantName: json["restaurant_name"],
         restaurantImage: json["restaurant_image"],

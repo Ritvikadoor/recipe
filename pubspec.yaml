@@ -41,6 +41,7 @@ dependencies:
   provider: ^6.0.4
   font_awesome_flutter: ^10.2.1
   dio: ^4.0.6
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:

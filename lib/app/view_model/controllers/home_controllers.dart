@@ -12,6 +12,8 @@ class HomeController extends ChangeNotifier {
   List<DishesModel> getAllDatas = [];
   List<Widget> tableMenuNames = [];
   List tableViews = [];
+  List tableprice = [];
+
   Future<List<DishesModel>> getAllData() async {
     getAllDatas = await ApiServices().getingRecipeData();
     tableMenuNames.clear();
@@ -31,6 +33,18 @@ class HomeController extends ChangeNotifier {
       tableViews.add(element.dishName);
       notifyListeners();
       // log(tableViews.toString());
+    }
+    return getAllDatas;
+  }
+
+  Future<List<DishesModel>> getDishesPrice() async {
+    getAllDatas = await ApiServices().getingRecipeData();
+    tableprice.clear();
+    for (CategoryDish element
+        in getAllDatas.first.tableMenuList.first.categoryDishes) {
+      tableprice.add(element.dishPrice.toString());
+      notifyListeners();
+      // log(element.dishCurrency.toString());
     }
     return getAllDatas;
   }

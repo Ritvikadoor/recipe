@@ -142,7 +142,7 @@ class CategoryDish {
   String dishName;
   double dishPrice;
   String dishImage;
-  List dishCurrency;
+  String dishCurrency;
   double dishCalories;
   String dishDescription;
   bool dishAvailability;
@@ -155,7 +155,7 @@ class CategoryDish {
         dishName: json["dish_name"],
         dishPrice: json["dish_price"].toDouble(),
         dishImage: json["dish_image"],
-        dishCurrency: [],
+        dishCurrency: json["dish_currency"],
         dishCalories: json["dish_calories"],
         dishDescription: json["dish_description"],
         dishAvailability: json["dish_Availability"],
@@ -169,7 +169,7 @@ class CategoryDish {
         "dish_name": dishName,
         "dish_price": dishPrice,
         "dish_image": dishImage,
-        "dish_currency": "dishCurrencyValues.reverse[dishCurrency]",
+        "dish_currency": dishCurrency,
         "dish_calories": dishCalories,
         "dish_description": dishDescription,
         "dish_Availability": dishAvailability,
@@ -183,20 +183,19 @@ class CategoryDish {
 
 // enum DishCurrency { SAR }
 
-// final dishCurrencyValues = EnumValues({
-//     "SAR": DishCurrency.SAR
-// });
+// final dishCurrencyValues =
+//     EnumValues({"SAR": DishCurrency.SAR}, {DishCurrency.SAR: "SAR"});
 
 // class EnumValues<T> {
-//     // Map<String, T> map;
-//     // Map<T, String> reverseMap;
+//   Map<String, T> map;
+//   Map<T, String> reverseMap;
 
-//     // EnumValues( this.map,reverseMap);
+//   EnumValues(this.map, this.reverseMap);
 
-//     Map<T, String> get reverse {
-//         if (reverseMap == null) {
-//             reverseMap = map.map((k, v) => new MapEntry(v, k));
-//         }
-//         return reverseMap;
+//   Map<T, String> get reverse {
+//     if (reverseMap.isEmpty) {
+//       reverseMap = map.map((k, v) => MapEntry(v, k));
 //     }
+//     return reverseMap;
+//   }
 // }

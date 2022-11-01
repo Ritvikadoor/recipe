@@ -10,38 +10,44 @@ class RecipeDishesTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await Provider.of<HomeController>(context, listen: false).getAllData();
+    });
     return Consumer<HomeController>(builder: (context, value, _) {
       log(value.tableMenuNames.length.toString());
-      return DefaultTabController(
-        initialIndex: 0,
-        length: value.tableMenuNames.length,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(30),
-              child: Container(
-                color: Colors.white,
-                height: 50.0,
-                child: TabBar(
-                  indicatorColor: Colors.red,
-                  unselectedLabelColor: Colors.grey,
-                  labelColor: Colors.red,
-                  tabs: value.tableMenuNames,
+      return value.tableMenuNames.isEmpty
+          ? Center(child: CircularProgressIndicator())
+          : DefaultTabController(
+              initialIndex: 0,
+              length: value.tableMenuNames.length,
+              child: Scaffold(
+                appBar: AppBar(
+                  backgroundColor: Colors.white,
+                  bottom: PreferredSize(
+                    preferredSize: const Size.fromHeight(30),
+                    child: Container(
+                      color: Colors.white,
+                      height: 50.0,
+                      width: double.infinity,
+                      child: TabBar(
+                        indicatorColor: Colors.red,
+                        unselectedLabelColor: Colors.grey,
+                        labelColor: Colors.red,
+                        tabs: value.tableMenuNames,
+                      ),
+                    ),
+                  ),
                 ),
+                body: const TabBarView(children: [
+                  DishesScreen(),
+                  Text("sddgins"),
+                  Text("cijsb"),
+                  Text("cijsb"),
+                  Text("cijsb"),
+                  Text("cijsb"),
+                ]),
               ),
-            ),
-          ),
-          body: const TabBarView(children: [
-            DishesScreen(),
-            Text("sddgins"),
-            Text("cijsb"),
-            Text("cijsb"),
-            Text("cijsb"),
-            Text("cijsb"),
-          ]),
-        ),
-      );
+            );
     });
   }
 }

@@ -11,14 +11,26 @@ class HomeController extends ChangeNotifier {
 
   List<DishesModel> getAllDatas = [];
   List<Widget> tableMenuNames = [];
-  List<Widget> tableViews = [];
+  List tableViews = [];
   Future<List<DishesModel>> getAllData() async {
     getAllDatas = await ApiServices().getingRecipeData();
     tableMenuNames.clear();
     for (TableMenuList element in getAllDatas.first.tableMenuList) {
       tableMenuNames.add(Text(element.menuCategory.toString()));
       notifyListeners();
-      log(tableMenuNames.toString());
+      // log(tableMenuNames.toString());
+    }
+    return getAllDatas;
+  }
+
+  Future<List<DishesModel>> getDishesName() async {
+    getAllDatas = await ApiServices().getingRecipeData();
+    tableViews.clear();
+    for (CategoryDish element
+        in getAllDatas.first.tableMenuList.first.categoryDishes) {
+      tableViews.add(element.dishName);
+      notifyListeners();
+      // log(tableViews.toString());
     }
     return getAllDatas;
   }

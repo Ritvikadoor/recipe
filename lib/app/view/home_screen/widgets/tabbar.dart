@@ -14,9 +14,8 @@ class RecipeDishesTab extends StatelessWidget {
       await Provider.of<HomeController>(context, listen: false).getAllData();
     });
     return Consumer<HomeController>(builder: (context, value, _) {
-      log(value.tableMenuNames.length.toString());
       return value.tableMenuNames.isEmpty
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : DefaultTabController(
               initialIndex: 0,
               length: value.tableMenuNames.length,
@@ -30,6 +29,7 @@ class RecipeDishesTab extends StatelessWidget {
                       height: 50.0,
                       width: double.infinity,
                       child: TabBar(
+                        isScrollable: true,
                         indicatorColor: Colors.red,
                         unselectedLabelColor: Colors.grey,
                         labelColor: Colors.red,

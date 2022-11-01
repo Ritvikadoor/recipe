@@ -11,7 +11,7 @@ class ApiServices {
       var response = await dio.get(baseURL);
       if (response.statusCode == 200) {
         Iterable list = await response.data;
-        log(response.data.toString());
+        // log(response.data.toString());
         return list.map((e) => DishesModel.fromJson(e)).toList();
       }
     } catch (e) {

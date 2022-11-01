@@ -11,9 +11,7 @@ class DishesScreen extends StatelessWidget {
       child: ListView.builder(
         itemCount: 20,
         itemBuilder: (context, index) {
-          return RecipeCard(
-            getAllData: [],
-          );
+          return RecipeCard();
         },
       ),
     );

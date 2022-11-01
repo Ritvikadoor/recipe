@@ -11,8 +11,10 @@ class HomeController extends ChangeNotifier {
     getAllDatas = await ApiServices().getingRecipeData();
 
     for (TableMenuList element in getAllDatas.first.tableMenuList) {
-      tableMenuNames.add(Text(element.menuCategory));
+      tableMenuNames.add(Text(element.menuCategory.toString()));
+
       notifyListeners();
+      // log(tableMenuNames.toString());
     }
     return getAllDatas;
   }

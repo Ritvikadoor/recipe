@@ -3,8 +3,9 @@ import 'package:reciepe_app/app/model/models.dart';
 import 'package:reciepe_app/app/view_model/services/api_services.dart';
 
 class RecipeCard extends StatelessWidget {
-  RecipeCard({super.key, required this.getAllData});
-  List<Widget> getAllData;
+  const RecipeCard({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

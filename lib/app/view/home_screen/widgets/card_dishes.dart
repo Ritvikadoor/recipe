@@ -6,7 +6,7 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       height: 250,
       child: Card(
         child: Padding(
@@ -28,7 +28,7 @@ class RecipeCard extends StatelessWidget {
                       )
                     ],
                   ),
-                  Text(
+                  const Text(
                     "Text",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -40,28 +40,26 @@ class RecipeCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("SAR 58.39"),
-                        Container(
-                          child: Row(
-                            children: [
-                              Text("15 Calories"),
-                              SizedBox(
-                                height: 80,
-                                width: 80,
-                                child: Image.network(
-                                  "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
-                                ),
-                              )
-                            ],
-                          ),
+                        const Text("SAR 58.39"),
+                        Row(
+                          children: [
+                            const Text("15 Calories"),
+                            SizedBox(
+                              height: 80,
+                              width: 80,
+                              child: Image.network(
+                                "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+                              ),
+                            )
+                          ],
                         )
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 60),
+                      padding: const EdgeInsets.only(top: 60),
                       height: 120,
                       width: 200,
-                      child: Text(
+                      child: const Text(
                           "The canonical fines herbes of French haute cuisine comprise finely chopped parsley, chives, tarragon, and chervil. These are employed in seasoning delicate dishes, such as chicken, fish, an"),
                     )
                   ],

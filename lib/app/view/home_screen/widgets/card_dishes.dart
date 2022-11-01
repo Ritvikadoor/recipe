@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:reciepe_app/app/model/models.dart';
+import 'package:reciepe_app/app/view_model/services/api_services.dart';
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({super.key});
+  RecipeCard({super.key, required this.getAllData});
+  List<Widget> getAllData;
 
   @override
   Widget build(BuildContext context) {
+    ApiServices().getingRecipeData();
     return FutureBuilder<DishesModel>(
         // future: ,
         builder: (context, snapshot) {

@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:reciepe_app/app/view/auth_screen/view_model/auth_services.dart';
 import 'package:reciepe_app/app/view/home_screen/view/home_screen.dart';
+import 'package:reciepe_app/app/view_model/controllers/home_controllers.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,8 +20,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // final ScaffoldMessengerState? scaffold = scaffoldKey.currentState;
 
-    return ChangeNotifierProvider(
-      create: (context) => GoogleSignInProvider(),
+    return MultiProvider(
+      providers: [
+        Provider<GoogleSignInProvider>(
+          create: (_) => GoogleSignInProvider(),
+        ),
+        Provider<HomeController>(
+          create: (_) => HomeController(),
+        ),
+      ],
       child: MaterialApp(
         scaffoldMessengerKey: scaffoldKey,
         title: 'Flutter Demo',

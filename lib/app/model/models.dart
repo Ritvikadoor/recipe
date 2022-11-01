@@ -143,7 +143,7 @@ class CategoryDish {
   double dishPrice;
   String dishImage;
   List dishCurrency;
-  int dishCalories;
+  double dishCalories;
   String dishDescription;
   bool dishAvailability;
   int dishType;

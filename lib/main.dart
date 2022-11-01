@@ -11,18 +11,18 @@ Future main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+  final scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ScaffoldMessengerState? _scaffold = _scaffoldKey.currentState;
+    // final ScaffoldMessengerState? scaffold = scaffoldKey.currentState;
 
     return ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
       child: MaterialApp(
-        scaffoldMessengerKey: _scaffoldKey,
+        scaffoldMessengerKey: scaffoldKey,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
